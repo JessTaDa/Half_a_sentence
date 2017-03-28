@@ -1,0 +1,33 @@
+<%= form_for(@tail) do |f| %>
+  <% if @tail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tail.errors.count, "error") %> prohibited this tail from being saved:</h2>
+
+      <ul>
+      <% @tail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- <div class="valign-wrapper"> -->
+<h1 class="center-align"><%= @brain.description %></h1>
+<!-- </div> -->
+
+<div class="field center-align">
+  <!-- <%= f.label :description %> -->
+  <%= f.text_area :description %>
+</div>
+<%= f.hidden_field :brain_id, :value => @tail.brain_id %>
+
+<button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+
+  </button>
+
+
+
+<!-- <div class="actions waves-effect waves-light btn center-align">
+  <%= f.submit %>
+</div> -->
+<% end %>

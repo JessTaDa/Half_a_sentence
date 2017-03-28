@@ -1,0 +1,7 @@
+<% if current_user.liked? @tail %>
+  $('.like-btn').addClass('liked');
+<% else %>
+  $('.like-btn').removeClass('liked');
+<% end %>
+$('.likes-count').html("<%= @tail.get_upvotes.size %>")
+// $('.likes-count').html("<%= @tail.get_upvotes %>")
